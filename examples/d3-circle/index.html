@@ -1,83 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
 
-    <head>
-        <meta charset="UTF-8">
-        <title>circle</title>
-        <style>
-            text {
-                 text-anchor: middle;
-            }
-            g.node,.closeTimes{
-                cursor: pointer;
-            }
-            .tooltip {
-                position: absolute;
-                width: 120px;
-                height: auto;
-                font-family: 'Microsoft YaHei';
-                font-size: 14px;
-                text-align: left;
-                padding:10px;
-                background-color: #5a5c5d;
-                color:white;
-                border-radius: 5px;
-            }
-            .tooltip-text{
-                margin-right:15px;
-            }
-            .tooltip-value{
-                color: #00ffd2;
-            }
-            .row{
-                width:1280px;
-                margin: 20px auto;
-            }
-            .wrap{
-                width:510px;
-                height:510px;
-                display: inline-block;
-            }
+<head>
+    <meta charset="UTF-8">
+    <title>circle</title>
+    <style>
+        text {
+            text-anchor: middle;
+        }
+        
+        g.node,
+        .closeTimes {
+            cursor: pointer;
+        }
+        
+        .tooltip {
+            position: absolute;
+            width: 120px;
+            height: auto;
+            font-family: 'Microsoft YaHei';
+            font-size: 14px;
+            text-align: left;
+            padding: 10px;
+            background-color: #5a5c5d;
+            color: white;
+            border-radius: 5px;
+        }
+        
+        .tooltip-text {
+            margin-right: 15px;
+        }
+        
+        .tooltip-value {
+            color: #00ffd2;
+        }
+    </style>
+</head>
 
-            .down .irs-from:after,
-            .down .irs-to:after,
-            .down .irs-single:after {
-                position: absolute;
-                display: block;
-                content: "";
-                width: 0;
-                height: 0;
-                border-left: 5px solid transparent;
-                border-right: 5px solid transparent;
-                border-bottom: 10px solid #18bef7;
-                bottom: 17px;
-                left: 45%;
-            }
+<body>
+    <div class="d3-circle"></div>
 
-            .up .irs-from:after,
-            .up .irs-to:after,
-            .up .irs-single:after {
-                position: absolute;
-                display: block;
-                content: "";
-                bottom: -10px;
-                left: 50%;
-                width: 0;
-                height: 0;
-                margin-left: -4px;
-                overflow: hidden;
-                border: 5px solid transparent;
-                border-top-color: #18bef7;
-            }
-        </style>
-    </head>
-
-    <body>
-        <div class="d3-circle"></div>
-
-        <script src="js/d3.js"></script>
-        <script src="js/d3-circle.js"></script>
-        <script type="text/javascript">
+    <script src="js/d3.js"></script>
+    <script src="js/d3-circle.js"></script>
+    <script type="text/javascript">
             var value = [
                 { id: 1, ranking: 1, name: '猛龙' },
                 { id: 2, ranking: 2, name: '火箭' },
@@ -115,7 +80,7 @@
                 .width(720) // 长度
                 .height(720) // 宽度
                 .backgroundColor('#fff') // 画布的背景色
-                .value(value.splice(0, 10)) // 小球数据
+                .value(value.splice(0, 30)) // 小球数据
                 .orbitColor(['#1e518f', '#b8d7fc']) // 小球外切轨道的颜色
                 .orbitWidth(1) // 小球外切轨道的宽度
                 .trackBall(30) // 小球外切轨道显示多少个小球
@@ -134,6 +99,6 @@
                 .textBeforeEdgeDominantBaseline('text-before-edge') // 左上角内文字的基线？这个属性没清楚。
             );
         </script>
-    </body>
+</body>
 
 </html>
